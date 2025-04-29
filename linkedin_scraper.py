@@ -11,10 +11,10 @@ li_at = st.text_input("🔐 Cookie LinkedIn 'li_at'", type="password")
 
 if st.button("📥 Extraire mes contacts en CSV") and li_at:
     headers = {
-        "cookie": f"li_at={li_at}",
-        "User-Agent": "Mozilla/5.0",
-    }
-
+    "cookie": f"li_at={li_at}",
+    "User-Agent": "Mozilla/5.0",
+    "csrf-token": "ajax:123456789"
+}
     url = "https://www.linkedin.com/voyager/api/relationships/connections"
     params = {
         "count": 100,
